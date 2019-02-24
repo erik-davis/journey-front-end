@@ -13,6 +13,9 @@
   ],
   "include": [
     "**/*.spec.ts",
-    "**/*.d.ts"
+    "**/*.d.ts",
+    "/assets/repositories/LawnmowerRepository.js",
+              "/assets/repositories/PhoneCaseRepository.js",
+              "/assets/repositories/TShirtRepository.js"
   ]
 }

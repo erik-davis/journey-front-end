@@ -1,5 +1,6 @@
 export enum ProductType {
-    Lawnmower,
-    PhoneCase,
-    TShirt
+    Lawnmower = 'Lawnmowers',
+    PhoneCase = 'Phone Cases',
+    TShirt = 'T-Shirts',
+    All = 'All'
 }

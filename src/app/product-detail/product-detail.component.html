@@ -4,14 +4,9 @@
   </tr>
 
   <tr *ngFor="let product of sortedProducts" class="mat-row" role="row">
-    <td class="mat-cell" role="gridcell">{{product.name}}</td>
-    <td class="mat-cell"  role="gridcell">{{product.priceNzd}}</td>
-    <td class="mat-cell"  role="gridcell">{{product.priceUsd}}</td>
-    <td class="mat-cell"  role="gridcell">{{product.priceEuros}}</td>
+    <td class="mat-cell">{{product.name}}</td>
+    <td class="mat-cell">{{product.priceNzd}}</td>
+    <td class="mat-cell">{{product.priceUsd}}</td>
+    <td class="mat-cell">{{product.priceEuros}}</td>
   </tr>
 </table>
-
-
-<!-- <ul>
-  <li *ngFor="let product of products">{{product.name}}</li>
-</ul> -->

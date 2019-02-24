@@ -1,5 +1,4 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatSortModule } from '@angular/material/sort';
 
 import { ProductType } from '../models/productType';
 import { ProductDetailComponent } from '../product-detail/product-detail.component';
@@ -12,10 +11,13 @@ import { MatTabChangeEvent } from '@angular/material/tabs';
 })
 export class ProductSelectionComponent implements OnInit {
 
-  constructor() { }
- // productSelected: number;
-  get product() { return ProductType };
   @ViewChild(ProductDetailComponent) productDetail: ProductDetailComponent;
+
+  tabLabels: Array<string>;
+
+  constructor() {
+   this.tabLabels = Object.values(ProductType);
+  }
 
   ngOnInit() {
     this.productDetail.productSelected(ProductType.Lawnmower);
@@ -23,9 +25,10 @@ export class ProductSelectionComponent implements OnInit {
 
   showProduct($event: MatTabChangeEvent): void {
     const selectedIndex = $event.index;
-    const isValidSelection = ProductType[selectedIndex] != null;
+    const selectedLabel = this.tabLabels[selectedIndex];
+    const isValidSelection = selectedLabel != null;
     if (isValidSelection) {
-      this.productDetail.productSelected(selectedIndex);
+      this.productDetail.productSelected(selectedLabel as ProductType);
     } else {
       throw new Error('there is no corresponding ProductType for the tab selected at index: ' + selectedIndex);
     }

@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectorRef, Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Sort } from '@angular/material/sort';
 
 import { ProductType } from '../models/productType';
