@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/04eca372-1e0f-41f8-b70a-ec0db103a85a/resourceGroups/JourneyProducts/providers/Microsoft.Web/sites/JourneyProducts",
+    "appService.deploySubpath": "dist"
+}

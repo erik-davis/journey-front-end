@@ -1,0 +1,17 @@
+<table matSort (matSortChange)="sortData($event)" class="mat-elevation-z8" role="grid">
+  <tr>
+      <th *ngFor="let header of productHeaders" [mat-sort-header]="header.name">{{header.displayName}}</th>
+  </tr>
+
+  <tr *ngFor="let product of sortedProducts" class="mat-row" role="row">
+    <td class="mat-cell" role="gridcell">{{product.name}}</td>
+    <td class="mat-cell"  role="gridcell">{{product.priceNzd}}</td>
+    <td class="mat-cell"  role="gridcell">{{product.priceUsd}}</td>
+    <td class="mat-cell"  role="gridcell">{{product.priceEuros}}</td>
+  </tr>
+</table>
+
+
+<!-- <ul>
+  <li *ngFor="let product of products">{{product.name}}</li>
+</ul> -->
