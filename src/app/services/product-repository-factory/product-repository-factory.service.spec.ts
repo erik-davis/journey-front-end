@@ -3,7 +3,7 @@ import { TestBed } from '@angular/core/testing';
 import { RepositoryFactoryService } from './product-repository-factory.service';
 import { ProductType } from 'src/app/models/productType';
 import { Product } from 'src/app/models/product';
-import { RepositoryInterface } from 'src/app/repository-interface';
+import { RepositoryInterface } from 'src/app/models/repository-interface';
 
 describe('RepositoryFactoryService', () => {
   let service: RepositoryFactoryService;

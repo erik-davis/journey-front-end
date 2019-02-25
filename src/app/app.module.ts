@@ -6,9 +6,9 @@ import { MatTableModule } from '@angular/material/table';
 import { MatTabsModule } from '@angular/material/tabs';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { ProductDetailComponent } from './product-detail/product-detail.component';
-import { ProductSelectionComponent } from './product-selection/product-selection.component';
+import { AppComponent } from './components/app-component/app.component';
+import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+import { ProductSelectionComponent } from './components/product-selection/product-selection.component';
 
 @NgModule({
   declarations: [

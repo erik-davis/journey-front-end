@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { MatTabChangeEvent } from '@angular/material/tabs';
 
-import { ProductType } from '../models/productType';
+import { ProductType } from '../../models/productType';
 import { ProductDetailComponent } from '../product-detail/product-detail.component';
 
 @Component({
@@ -20,6 +20,7 @@ export class ProductSelectionComponent implements OnInit {
     this.productDetail.productSelected(this.tabLabels[0]);
   }
 
+  // the tabs are displayed in order from the ProductType enum, so the index is used to do a tab lookup here
   showProduct($event: MatTabChangeEvent): void {
     const selectedIndex = $event.index;
     const selectedLabel = this.tabLabels[selectedIndex];
@@ -30,5 +31,4 @@ export class ProductSelectionComponent implements OnInit {
       throw new Error('there is no corresponding ProductType for the tab selected at index: ' + selectedIndex);
     }
   }
-
 }

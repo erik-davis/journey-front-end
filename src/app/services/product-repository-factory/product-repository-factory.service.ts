@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { ProductType } from '../../models/productType';
-import { RepositoryInterface } from '../../repository-interface';
+import { RepositoryInterface } from '../../models/repository-interface';
 import { Product } from 'src/app/models/product';
 
 declare function LawnmowerRepository(): any;

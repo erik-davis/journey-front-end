@@ -1,5 +1,6 @@
-import { SortComparisonService } from './sort-comparison.service';
 import { TestBed } from '@angular/core/testing';
+
+import { SortComparisonService } from './sort-comparison.service';
 
 describe('SortComparisonService', () => {
     let service: SortComparisonService;

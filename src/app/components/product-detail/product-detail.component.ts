@@ -1,12 +1,12 @@
 import { Component, Input } from '@angular/core';
 import { Sort } from '@angular/material/sort';
 
-import { ProductType } from '../models/productType';
-import { RepositoryFactoryService } from '../services/product-repository-factory/product-repository-factory.service';
-import { Product } from '../models/product';
-import { PriceCalculatorService } from '../services/price-calculator/price-calculator.service';
-import { ProductView } from '../models/product-view';
-import { SortComparisonService } from '../services/sort-comparison/sort-comparison.service';
+import { ProductType } from '../../models/productType';
+import { RepositoryFactoryService } from '../../services/product-repository-factory/product-repository-factory.service';
+import { Product } from '../../models/product';
+import { PriceCalculatorService } from '../../services/price-calculator/price-calculator.service';
+import { ProductView } from '../../models/product-view';
+import { SortComparisonService } from '../../services/sort-comparison/sort-comparison.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -26,13 +26,15 @@ export class ProductDetailComponent {
               private sortComparisonService: SortComparisonService) { 
   }
 
-  productSelected(product: ProductType): void {
-    const repo = this.respositoryFactory.getProductRepository(product);
+  // called by ProductSelectionComponent when user clicks a tab
+  productSelected(productType: ProductType): void {
+    const repo = this.respositoryFactory.getProductRepository(productType);
     const allProducts = repo.getAll();
     this.unsortedProducts = this.createProductViews(allProducts);
     this.displayedProducts = this.unsortedProducts.slice(0);
   }
 
+  // called when user clicks a column header to sort
   sortChanged(sort: Sort): void {
     const unsortedProductsCopy = this.unsortedProducts.slice(0);
     const sortRemoved = !sort.active || sort.direction === '';
@@ -44,6 +46,7 @@ export class ProductDetailComponent {
     }
   }
 
+  // builds the view models, which only contain properties displayed in the table
   private createProductViews(products: Array<Product>): Array<ProductView> {
     const productViews = new Array<ProductView>();
     products.map(p => {
