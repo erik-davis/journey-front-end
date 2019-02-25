@@ -21,23 +21,21 @@ Each product type currently has its own model which extends the base product mod
 ## Adding a new product type
 
 This project was designed around the single-responsibility and open-closed principles in order to make adding new product types easy.
-To display the name and price data for an additional product type, a developer would have to make the following changes:
-*Add the product type to the ProductType.ts file
-*Add a data repo to the /assets/repositories folder that follows the Repository Interface in /models/repository-interface.ts
-*Modify the product-repository-factory.service.ts to return the correct repo for the new ProductType (if the ProductType is added, but there is no repo to handle it, an error will be thrown by the repo factory service to indicate this to the developer).
+To display the name and price data for an additional product type, a developer would have to make the following changes: 
+
+1) Add the product type to the ProductType.ts file
+
+2) Add a data repo to the /assets/repositories folder that follows the Repository Interface in /models/repository-interface.ts 
+
+3) Modify the product-repository-factory.service.ts to return the correct repo for the new ProductType (if the ProductType is added, but there is no repo to handle it, an error will be thrown by the repo factory service to indicate this to the developer).
 
 The two main view components and other supporting services can remain unchanged. 
 
 ## Build
+
 After running `npm install`, run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
 ## Tests
 
 Run `ng test` to execute the unit tests via [Karma]
-Each component and service has a corresponding .spec file which contains the unit tests (31 tests total). Tests are strictly scoped to the method-level and spies are used to keep tests from executing code outside of the method being tested. Running 'ng test --code-coverage' will generate the coverage report (see below):
-=============================== Coverage summary ===============================
-Statements   : 96.4% ( 107/111 )
-Branches     : 100% ( 18/18 )
-Functions    : 85.71% ( 24/28 )
-Lines        : 96.04% ( 97/101 )
-================================================================================
+Each component and service has a corresponding .spec file which contains the unit tests (31 tests total). Tests are strictly scoped to the method-level and spies are used to keep tests from executing code outside of the method being tested. Running 'ng test --code-coverage' will generate the coverage report. Statements, Branches, Functions, and Lines are currently all covered over 85%.
