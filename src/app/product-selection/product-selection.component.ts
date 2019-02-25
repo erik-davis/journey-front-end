@@ -1,26 +1,23 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { MatTabChangeEvent } from '@angular/material/tabs';
 
 import { ProductType } from '../models/productType';
 import { ProductDetailComponent } from '../product-detail/product-detail.component';
-import { MatTabChangeEvent } from '@angular/material/tabs';
 
 @Component({
   selector: 'app-product-selection',
   templateUrl: './product-selection.component.html',
-  styleUrls: ['./product-selection.component.css']
+  styleUrls: ['./product-selection.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class ProductSelectionComponent implements OnInit {
 
   @ViewChild(ProductDetailComponent) productDetail: ProductDetailComponent;
 
-  tabLabels: Array<string>;
-
-  constructor() {
-   this.tabLabels = Object.values(ProductType);
-  }
+  readonly tabLabels: Array<ProductType> = Object.values(ProductType);
 
   ngOnInit() {
-    this.productDetail.productSelected(ProductType.Lawnmower);
+    this.productDetail.productSelected(this.tabLabels[0]);
   }
 
   showProduct($event: MatTabChangeEvent): void {
@@ -28,7 +25,7 @@ export class ProductSelectionComponent implements OnInit {
     const selectedLabel = this.tabLabels[selectedIndex];
     const isValidSelection = selectedLabel != null;
     if (isValidSelection) {
-      this.productDetail.productSelected(selectedLabel as ProductType);
+      this.productDetail.productSelected(selectedLabel);
     } else {
       throw new Error('there is no corresponding ProductType for the tab selected at index: ' + selectedIndex);
     }

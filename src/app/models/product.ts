@@ -3,7 +3,4 @@ export class Product {
     colour: string;
     name: string;
     price: number;
-    priceNzd: string;
-    priceUsd: string;
-    priceEuros: string;
 }

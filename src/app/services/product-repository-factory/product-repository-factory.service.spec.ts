@@ -5,7 +5,7 @@ import { ProductType } from 'src/app/models/productType';
 import { Product } from 'src/app/models/product';
 import { RepositoryInterface } from 'src/app/repository-interface';
 
-fdescribe('RepositoryFactoryService', () => {
+describe('RepositoryFactoryService', () => {
   let service: RepositoryFactoryService;
   let boxedService: any;
 
@@ -56,7 +56,7 @@ fdescribe('RepositoryFactoryService', () => {
   });
 
   it('should call getRepositoryOfAllProducts for type all', () => {
-    const fakeRepository = { prototype: { getAll: () => {}}};
+    const fakeRepository = { getAll: (): Array<Product> => new Array<Product>() };
     const getRepoSpy = spyOn(boxedService, 'getRepositoryOfAllProducts').and.returnValue(fakeRepository);
 
     const repo = service.getProductRepository(ProductType.All);
