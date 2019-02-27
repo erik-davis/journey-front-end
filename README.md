@@ -16,7 +16,7 @@ The site allows the user to view all products or only products of a certain type
 
 ## Future Features
 
-Each product type currently has its own model which extends the base product model. This would allow for use of specific properties like 'isVehicle' to be used if desired. However, the current site only uses the name and price property from each product. If the data set size increased, it might also be desirable to add a text box where the user could type in a search term to filter the visible data.
+Each product type currently has its own model which extends the base product model. This would allow for use of specific properties like 'isVehicle' to be used if desired. However, the current site only uses the name and price property from each product. If the data set size increases, it might also be beneficial to add a text box where the user could type in a search term to filter the visible data. The Angular Material components are reactive by default, but overall the site could be redesigned to make the mobile user experience better.
 
 ## Adding a new product type
 
@@ -37,5 +37,4 @@ After running `npm install`, run `ng build` to build the project. The build arti
 
 ## Tests
 
-Run `ng test` to execute the unit tests via [Karma]
-Each component and service has a corresponding .spec file which contains the unit tests (31 tests total). Tests are strictly scoped to the method-level and spies are used to keep tests from executing code outside of the method being tested. Running 'ng test --code-coverage' will generate the coverage report. Statements, Branches, Functions, and Lines are currently all covered over 85%.
+Run `ng test` to execute the unit tests via Karma. Each component and service has a corresponding .spec file which contains the unit tests (31 tests total). Tests are strictly scoped to the method-level and spies are used to keep tests from executing code outside of the method being tested. Running 'ng test --code-coverage' will generate the coverage report. Statements, Branches, Functions, and Lines are currently all covered over 85%.
