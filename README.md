@@ -33,7 +33,7 @@ The two main view components and other supporting services can remain unchanged.
 
 ## Build
 
-After running `npm install`, run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+After running `npm install`, run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build, and use `ng serve --open` serve up the site to your default browser on port 4200.
 
 ## Tests
 
